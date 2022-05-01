@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Common.99.2.140\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.99.2.140\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.99.2.14\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.99.2.14\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.99.2.14\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.99.2.14\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD690386-2445-4B85-A98C-32D6505A40D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Asimov_cspc</RootNamespace>
+    <AssemblyName>Asimov_cspc</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=99.2.140.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.99.2.140\lib\net452\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=99.2.140.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.99.2.140\lib\net452\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.28.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.28\Assemblies\net6.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="eleve\listeNoteEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eleve\listeNoteEleve.Designer.cs">
+      <DependentUpon>listeNoteEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeClasse\ajtClasseProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeClasse\ajtClasseProviseur.Designer.cs">
+      <DependentUpon>ajtClasseProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeClasse\listeClassesProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeClasse\listeClassesProviseur.Designer.cs">
+      <DependentUpon>listeClassesProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeClasse\modifClasseProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeClasse\modifClasseProviseur.Designer.cs">
+      <DependentUpon>modifClasseProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeEleves\ajtEleveProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeEleves\ajtEleveProviseur.Designer.cs">
+      <DependentUpon>ajtEleveProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeEleves\listeElevesProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeEleves\listeElevesProviseur.Designer.cs">
+      <DependentUpon>listeElevesProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeEleves\modifEleveProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeEleves\modifEleveProviseur.Designer.cs">
+      <DependentUpon>modifEleveProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeNotes\ajtNoteProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeNotes\ajtNoteProviseur.Designer.cs">
+      <DependentUpon>ajtNoteProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeProf\ajtProfProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeProf\ajtProfProviseur.Designer.cs">
+      <DependentUpon>ajtProfProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prof\detailsClasseProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prof\detailsClasseProf.Designer.cs">
+      <DependentUpon>detailsClasseProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prof\listeClasseProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prof\listeClasseProf.Designer.cs">
+      <DependentUpon>listeClasseProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeMatiere\listeMatiereProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeMatiere\listeMatiereProviseur.Designer.cs">
+      <DependentUpon>listeMatiereProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prof\listeNotesEleveMatiere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prof\listeNotesEleveMatiere.Designer.cs">
+      <DependentUpon>listeNotesEleveMatiere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeNotes\listeNotesProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeNotes\listeNotesProviseur.Designer.cs">
+      <DependentUpon>listeNotesProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeProf\listeProfProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeProf\listeProfProviseur.Designer.cs">
+      <DependentUpon>listeProfProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\menuProviseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\menuProviseur.Designer.cs">
+      <DependentUpon>menuProviseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Methodes.cs" />
+    <Compile Include="proviseur\listeMatiere\modifFormulaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeMatiere\modifFormulaire.Designer.cs">
+      <DependentUpon>modifFormulaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeNotes\modifNoteFormulaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeNotes\modifNoteFormulaire.Designer.cs">
+      <DependentUpon>modifNoteFormulaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="proviseur\listeProf\modifProfFormulaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="proviseur\listeProf\modifProfFormulaire.Designer.cs">
+      <DependentUpon>modifProfFormulaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="eleve\listeNoteEleve.resx">
+      <DependentUpon>listeNoteEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeClasse\ajtClasseProviseur.resx">
+      <DependentUpon>ajtClasseProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeClasse\listeClassesProviseur.resx">
+      <DependentUpon>listeClassesProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeClasse\modifClasseProviseur.resx">
+      <DependentUpon>modifClasseProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeEleves\ajtEleveProviseur.resx">
+      <DependentUpon>ajtEleveProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeEleves\listeElevesProviseur.resx">
+      <DependentUpon>listeElevesProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeEleves\modifEleveProviseur.resx">
+      <DependentUpon>modifEleveProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeNotes\ajtNoteProviseur.resx">
+      <DependentUpon>ajtNoteProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeProf\ajtProfProviseur.resx">
+      <DependentUpon>ajtProfProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prof\detailsClasseProf.resx">
+      <DependentUpon>detailsClasseProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prof\listeClasseProf.resx">
+      <DependentUpon>listeClasseProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeMatiere\listeMatiereProviseur.resx">
+      <DependentUpon>listeMatiereProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prof\listeNotesEleveMatiere.resx">
+      <DependentUpon>listeNotesEleveMatiere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeNotes\listeNotesProviseur.resx">
+      <DependentUpon>listeNotesProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeProf\listeProfProviseur.resx">
+      <DependentUpon>listeProfProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\menuProviseur.resx">
+      <DependentUpon>menuProviseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeMatiere\modifFormulaire.resx">
+      <DependentUpon>modifFormulaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeNotes\modifNoteFormulaire.resx">
+      <DependentUpon>modifNoteFormulaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proviseur\listeProf\modifProfFormulaire.resx">
+      <DependentUpon>modifProfFormulaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\listeClasseProf.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.99.2.14\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.99.2.14\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.99.2.14\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.99.2.14\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.99.2.140\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.99.2.140\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.99.2.140\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.99.2.140\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.99.2.140\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.99.2.140\build\CefSharp.Common.targets')" />
+</Project>
