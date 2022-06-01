@@ -71,7 +71,7 @@ namespace Asimov_cspc
 
             dataGridView1.Rows.Add(new object[]
                 {
-                    newListe[taille]["titre"],newListe[taille]["note"], DeleteNote.Text = newListe[taille]["idNote"]
+                    newListe[taille]["Titre"],newListe[taille]["note"], DeleteNote.Text = newListe[taille]["idNote"]
 
                 });
 
