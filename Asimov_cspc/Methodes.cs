@@ -13,7 +13,7 @@ namespace Asimov_cspc
     {
         public void test()
         {
-            MessageBox.Show("caca");
+            MessageBox.Show("oui");
         }
         //fonction recuperant la liste des matieres en json
         public dynamic getListeMatiere()
